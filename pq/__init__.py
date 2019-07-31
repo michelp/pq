@@ -259,7 +259,6 @@ class Queue(object):
     def _listen(self, cursor):
         cursor.execute('LISTEN "%s"', (Literal(self.name), ))
 
-    @prepared
     def _put_item(self, cursor):
         """Puts a single item into the queue.
 
